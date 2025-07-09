@@ -365,7 +365,7 @@ app.patch('/books/:id/status', verifyToken, async (req, res) => {
 
 
 
-app.post('/books', async (req, res) => {
+app.post('/books', verifyToken, async (req, res) => {
   const newBook = req.body;
   newBook.upvote = typeof newBook.upvote === "number" ? newBook.upvote : 0;  
   
