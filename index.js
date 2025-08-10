@@ -14,10 +14,11 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_fallback_secret';
 
 
 const corsOptions = {
-  origin: ['https://aelevenclient.vercel.app', 'http://localhost:3000'], 
+  origin: '*',  // allows all origins
   methods: ['GET', 'POST', 'PATCH', 'DELETE', 'PUT'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
+
 
 
 app.use(cors(corsOptions));  
